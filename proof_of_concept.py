@@ -10,5 +10,6 @@ conn_str = (
 
 connection = pyodbc.connect(conn_str)
 cursor = connection.cursor()
-for table_info in cursor.tables(tableType='TABLE'):
-    print(table_info.table_name)
+
+for item in cursor.execute("SELECT TOP 10 * FROM tblRSVPCases"):
+    print item
