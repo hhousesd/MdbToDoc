@@ -13,9 +13,10 @@ cursor = connection.cursor()
 
 for item in cursor.execute("SELECT TOP 10 * FROM tblRSVPCases"):
     output_doc = Document()
-
     case_name = str(item[5]).replace(r'/', '-')
+    case_id = str(item[6])
 
+    output_doc.add_paragraph(case_id)
     output_doc.save(r"output/" + case_name + '.docx')
 
 
