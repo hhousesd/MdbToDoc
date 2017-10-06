@@ -19,13 +19,10 @@ def get_cases_from_rsvp_mdb():
     results = {}
 
     for item in cursor.execute(QUERY_CASES_AND_PEOPLE):
-
         case_id = item[0]
-
-        if not results.has_key(case_id):
+        if case_id not in results:
             results[case_id] = []
         results[case_id].append(item)
-
     return results
 
 
@@ -35,7 +32,6 @@ def format_output_filename(case_name):
 
 cases = get_cases_from_rsvp_mdb()
 for case_id in cases.keys():
-
     if len(cases[case_id]) == 0:
         print(str.format("case id {0} has no associated people", case_id))
 
