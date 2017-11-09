@@ -1,0 +1,36 @@
+### PyCharm
+installed virtualenv package
+
+### tool config
+installed Python 2.7
+installed PyCharm
+created GitHub access token for PyCharm to use to commit
+git config --global user.email "hhsdstaff@gmail.com"
+git config --global user.name "james"
+
+
+### tools
+Python 2.7
+PyCharm
+Git
+
+### Python modules
+virtualenv
+pyodbc
+python-docx
+
+
+### playing with ad-hoc query
+###
+SELECT Log.*, Case.*
+FROM tblPhonelog as Log
+INNER JOIN tblRSVPCases AS Case ON Log.GwiCaseRef_ID = Case.GwiCaseRef_ID
+WHERE Case.strCase_Name = 'Gama/Gama'
+
+
+### new requirements
+PhoneLog extraction
+* log
+* extract each Person from each individual Row and diff vs MDB data
+
+Load Test

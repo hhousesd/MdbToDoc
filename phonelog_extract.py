@@ -1,0 +1,1 @@
+https://github.com/python-openxml/python-docx/issues/276
